@@ -1,0 +1,18 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: order-service
+
+services:
+  customer:
+    url: ${CUSTOMER_SERVICE_URL:http://localhost:8081}
+  payment:
+    url: ${PAYMENT_SERVICE_URL:http://localhost:8082}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
